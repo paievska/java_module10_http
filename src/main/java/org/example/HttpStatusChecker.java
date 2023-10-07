@@ -5,9 +5,9 @@ import java.net.HttpURLConnection;
 import java.net.URL;
 
 public class HttpStatusChecker {
-    static String url = "https://http.cat";
+    private final String url = "https://http.cat";
 
-    public static String getStatusImage(int code) throws IOException {
+    public String getStatusImage(int code) throws IOException {
         String imageUrl = url + "/" + code + ".jpg";
         HttpURLConnection connection = (HttpURLConnection) new URL(imageUrl).openConnection();
         connection.setRequestMethod("HEAD");
